@@ -1,0 +1,114 @@
+from logging import config
+import tkinter as tk 
+
+
+gabriel = tk.Tk()
+gabriel.title("Gabriel")
+gabriel.resizable(False, False)
+gabriel.configure(bg="darkgray")  # Set background color 
+
+def bentry(char):
+	e1.insert(tk.END, char)
+
+def bclear():
+	e1.delete(0, tk.END)
+
+def bequal():
+	result = eval(e1.get())
+	e1.delete(0, tk.END)
+	e1.insert(0, result)
+
+
+
+
+e1 = tk.Entry(gabriel, width=35, font=("Arial", 20), borderwidth=5, bg="white", fg="black")
+e1.grid(row=0, column=0, columnspan=4, padx=10, pady=10)
+
+button_style = {"width": 15, "height": 2, "font": ("Arial", 15), "bg": "#4CAF51", "fg": "white", "borderwidth": 10}
+
+def bequal():
+    expression = e1.get()
+    if expression == "24+31":
+        result = "i miss you Balik kana :("
+    else:
+        result = eval(expression)
+    e1.delete(0, tk.END)
+    e1.insert(0, result)
+b2 = tk.Button(gabriel, text="2",width=21, height=5, command=lambda:bentry("2"))
+b3 = tk.Button(gabriel, text="3",width=21, height=5, command=lambda:bentry("3"))
+b4 = tk.Button(gabriel, text="4",width=21, height=5, command=lambda:bentry("4"))
+b5 = tk.Button(gabriel, text="5",width=21, height=5, command=lambda:bentry("5"))
+b6 = tk.Button(gabriel, text="6",width=21, height=5, command=lambda:bentry("6"))
+b7 = tk.Button(gabriel, text="7",width=21, height=5, command=lambda:bentry("7"))
+b8 = tk.Button(gabriel, text="8",width=21, height=5, command=lambda:bentry("8"))
+b9 = tk.Button(gabriel, text="9",width=21, height=5, command=lambda:bentry("9"))
+b0 = tk.Button(gabriel, text="0",width=21, height=5, command=lambda:bentry("0"))
+ba = tk.Button(gabriel, text="+",width=21, height=5, command=lambda:bentry("+"))
+bs = tk.Button(gabriel, text="-",width=21, height=5, command=lambda:bentry("-"))
+bm = tk.Button(gabriel, text="*",width=21, height=5, command=lambda:bentry("*"))
+bd = tk.Button(gabriel, text="/",width=21, height=5, command=lambda:bentry("/"))
+bc = tk.Button(gabriel, text="C",width=21, height=5, command=lambda:bclear())
+be = tk.Button(gabriel, text="=",width=1, height=5, command=lambda:bequal())
+
+
+
+b1 = tk.Button(gabriel, text="1", **button_style, command=lambda: bentry("1"))
+b1.grid(row=1, column=0, padx=5, pady=5)
+b2 = tk.Button(gabriel, text="2", **button_style, command=lambda: bentry("2"))
+b2.grid(row=1, column=0, padx=5, pady=5)
+b3 = tk.Button(gabriel, text="3", **button_style, command=lambda: bentry("3"))
+b3.grid(row=1, column=0, padx=5, pady=5)
+b4 = tk.Button(gabriel, text="4", **button_style, command=lambda: bentry("4"))
+b4.grid(row=1, column=0, padx=5, pady=5)
+b5 = tk.Button(gabriel, text="5", **button_style, command=lambda: bentry("5"))
+b5.grid(row=1, column=0, padx=5, pady=5)
+b6 = tk.Button(gabriel, text="6", **button_style, command=lambda: bentry("6"))
+b6.grid(row=1, column=0, padx=5, pady=5)
+b7 = tk.Button(gabriel, text="7", **button_style, command=lambda: bentry("8"))
+b7.grid(row=1, column=0, padx=5, pady=5)
+b8 = tk.Button(gabriel, text="8", **button_style, command=lambda: bentry("8"))
+b8.grid(row=1, column=0, padx=5, pady=5)
+b9 = tk.Button(gabriel, text="9", **button_style, command=lambda: bentry("9"))
+b9.grid(row=1, column=0, padx=5, pady=5)
+b0 = tk.Button(gabriel, text="0", **button_style, command=lambda: bentry("0"))
+b0.grid(row=1, column=0, padx=5, pady=5)
+ba = tk.Button(gabriel, text="+", **button_style, command=lambda: bentry("+"))
+ba.grid(row=1, column=0, padx=5, pady=5)
+bs = tk.Button(gabriel, text="-", **button_style, command=lambda: bentry("-"))
+bs.grid(row=1, column=0, padx=5, pady=5)
+bm = tk.Button(gabriel, text="*", **button_style, command=lambda: bentry("*"))
+bm.grid(row=1, column=0, padx=5, pady=5)
+bd = tk.Button(gabriel, text="/", **button_style, command=lambda: bentry("/"))
+bd.grid(row=1, column=0, padx=5, pady=5)
+bc = tk.Button(gabriel, text="C", **button_style, command=bclear)
+bc.grid(row=5, column=2)
+be = tk.Button(gabriel, text="=", width=51, height=2, font=("Arial", 15), bg="#4CAF51", fg="white", borderwidth=10, command=bequal)
+be.grid(row=6, column=0, columnspan=4, padx=5, pady=5)
+
+
+e1.grid(row=0, columnspan=3)
+b1.grid(row=1, column=0)
+b2.grid(row=1, column=1)
+b3.grid(row=1, column=2)
+b4.grid(row=2, column=0)
+b5.grid(row=2, column=1)
+b6.grid(row=2, column=2)
+b7.grid(row=3, column=0)
+b8.grid(row=3, column=1)
+b9.grid(row=3, column=2)
+b0.grid(row=4, column=0)
+ba.grid(row=4, column=1)
+bs.grid(row=4, column=2)
+bm.grid(row=5, column=0)
+bd.grid(row=5, column=1)
+bc.grid(row=5, column=2)
+be.grid(row=6, columnspan=3)
+
+
+
+
+gabriel.mainloop()
+
+
+
+
